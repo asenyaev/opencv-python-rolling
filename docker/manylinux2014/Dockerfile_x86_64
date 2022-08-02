@@ -1,5 +1,5 @@
-# Version: 20220628
-# Image name: quay.io/opencv-ci/opencv-python-manylinux2014-x86-64
+# Version: 20220802
+# Image name: quay.io/opencv-ci/opencv-python-rolling-manylinux2014-x86-64
 
 FROM quay.io/pypa/manylinux2014_x86_64:latest
 

@@ -11,7 +11,7 @@ Write here what went wrong.
 - example code
 - operating system
 - architecture (e.g. x86)
-- opencv-python version
+- opencv-python-rolling version
 
 ##### Issue submission checklist
 
@@ -39,4 +39,4 @@ Write here what went wrong.
 
    -->
  - [ ] The issue is related to the build scripts in this repository, to the pre-built binaries or is a feature request (such as "please enable this additional dependency")
- - [ ] I'm using the latest version of ``opencv-python``
+ - [ ] I'm using the latest version of ``opencv-python-rolling``

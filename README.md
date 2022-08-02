@@ -1,4 +1,4 @@
-[![Downloads](http://pepy.tech/badge/opencv-python)](http://pepy.tech/project/opencv-python)
+[![Downloads](http://pepy.tech/badge/opencv-python-rolling)](http://pepy.tech/project/opencv-python-rolling)
 
 ## OpenCV on Wheels
 
@@ -16,15 +16,15 @@ Check the manual build section if you wish to compile the bindings from source t
 
     **a.** Packages for standard desktop environments (Windows, macOS, almost any GNU/Linux distribution)
 
-    - Option 1 - Main modules package: ``pip install opencv-python``
-    - Option 2 - Full package (contains both main modules and contrib/extra modules): ``pip install opencv-contrib-python`` (check contrib/extra modules listing from [OpenCV documentation](https://docs.opencv.org/master/))
+    - Option 1 - Main modules package: ``pip install opencv-python-rolling``
+    - Option 2 - Full package (contains both main modules and contrib/extra modules): ``pip install opencv-contrib-python-rolling`` (check contrib/extra modules listing from [OpenCV documentation](https://docs.opencv.org/master/))
 
     **b.** Packages for server (headless) environments (such as Docker, cloud environments etc.), no GUI library dependencies
 
     These packages are smaller than the two other packages above because they do not contain any GUI functionality (not compiled with Qt / other GUI components). This means that the packages avoid a heavy dependency chain to X11 libraries and you will have for example smaller Docker images as a result. You should always use these packages if you do not use `cv2.imshow` et al. or you are using some other package (such as PyQt) than OpenCV to create your GUI.
 
-    - Option 3 - Headless main modules package: ``pip install opencv-python-headless``
-    - Option 4 - Headless full package (contains both main modules and contrib/extra modules): ``pip install opencv-contrib-python-headless`` (check contrib/extra modules listing from [OpenCV documentation](https://docs.opencv.org/master/))
+    - Option 3 - Headless main modules package: ``pip install opencv-python-rolling-headless``
+    - Option 4 - Headless full package (contains both main modules and contrib/extra modules): ``pip install opencv-contrib-python-headless-rolling`` (check contrib/extra modules listing from [OpenCV documentation](https://docs.opencv.org/master/))
 
 4. Import the package:
 
@@ -47,7 +47,7 @@ A: No, the packages are special wheel binary packages and they already contain s
 
 **Q: Pip install fails with ``ModuleNotFoundError: No module named 'skbuild'``?**
 
-Since ``opencv-python`` version 4.3.0.\*, ``manylinux1`` wheels were replaced by ``manylinux2014`` wheels. If your pip is too old, it will try to use the new source distribution introduced in 4.3.0.38 to manually build OpenCV because it does not know how to install ``manylinux2014`` wheels. However, source build will also fail because of too old ``pip`` because it does not understand build dependencies in ``pyproject.toml``. To use the new ``manylinux2014`` pre-built wheels (or to build from source), your ``pip`` version must be >= 19.3. Please upgrade ``pip`` with ``pip install --upgrade pip``.
+Since ``opencv-python-rolling`` version 4.3.0.\*, ``manylinux1`` wheels were replaced by ``manylinux2014`` wheels. If your pip is too old, it will try to use the new source distribution introduced in 4.3.0.38 to manually build OpenCV because it does not know how to install ``manylinux2014`` wheels. However, source build will also fail because of too old ``pip`` because it does not understand build dependencies in ``pyproject.toml``. To use the new ``manylinux2014`` pre-built wheels (or to build from source), your ``pip`` version must be >= 19.3. Please upgrade ``pip`` with ``pip install --upgrade pip``.
 
 **Q: Import fails on Windows: ``ImportError: DLL load failed: The specified module could not be found.``?**
 
@@ -67,21 +67,21 @@ A: Make sure you have removed old manual installations of OpenCV Python bindings
 
 **Q: Function foo() or method bar() returns wrong result, throws exception or crashes interpreter. What should I do?**
 
-A: The repository contains only OpenCV-Python package build scripts, but not OpenCV itself. Python bindings for OpenCV are developed in official OpenCV repository and it's the best place to report issues. Also please check {OpenCV wiki](https://github.com/opencv/opencv/wiki) and [the official OpenCV forum](https://forum.opencv.org/) before file new bugs.
+A: The repository contains only OpenCV Python package build scripts, but not OpenCV itself. Python bindings for OpenCV are developed in official OpenCV repository and it's the best place to report issues. Also please check {OpenCV wiki](https://github.com/opencv/opencv/wiki) and [the official OpenCV forum](https://forum.opencv.org/) before file new bugs.
 
 **Q: Why the packages do not include non-free algorithms?**
 
 A: Non-free algorithms such as SURF are not included in these packages because they are patented / non-free and therefore cannot be distributed as built binaries. Note that SIFT is included in the builds due to patent expiration since OpenCV versions 4.3.0 and 3.4.10. See this issue for more info: https://github.com/skvark/opencv-python/issues/126
 
-**Q: Why the package and import are different (opencv-python vs. cv2)?**
+**Q: Why the package and import are different (opencv-python-rolling vs. cv2)?**
 
-A: It's easier for users to understand ``opencv-python`` than ``cv2`` and it makes it easier to find the package with search engines. `cv2` (old interface in old OpenCV versions was named as `cv`) is the name that OpenCV developers chose when they created the binding generators. This is kept as the import name to be consistent with different kind of tutorials around the internet. Changing the import name or behaviour would be also confusing to experienced users who are accustomed to the ``import cv2``.
+A: It's easier for users to understand ``opencv-python-rolling`` than ``cv2`` and it makes it easier to find the package with search engines. `cv2` (old interface in old OpenCV versions was named as `cv`) is the name that OpenCV developers chose when they created the binding generators. This is kept as the import name to be consistent with different kind of tutorials around the internet. Changing the import name or behaviour would be also confusing to experienced users who are accustomed to the ``import cv2``.
 
-## Documentation for opencv-python
+## Documentation for opencv-python-rolling
 
-[![Windows Build Status](https://github.com/opencv/opencv-python/actions/workflows/build_wheels_windows.yml/badge.svg)](https://github.com/opencv/opencv-python/actions/workflows/build_wheels_windows.yml)
-[![(Linux Build status)](https://github.com/opencv/opencv-python/actions/workflows/build_wheels_linux.yml/badge.svg)](https://github.com/opencv/opencv-python/actions/workflows/build_wheels_linux.yml)
-[![(Mac OS Build status)](https://github.com/opencv/opencv-python/actions/workflows/build_wheels_macos.yml/badge.svg)](https://github.com/opencv/opencv-python/actions/workflows/build_wheels_macos.yml)
+[![Windows Build Status](https://github.com/opencv/opencv-python-rolling/actions/workflows/build_wheels_windows.yml/badge.svg)](https://github.com/opencv/opencv-python-rolling/actions/workflows/build_wheels_windows.yml)
+[![(Linux Build status)](https://github.com/opencv/opencv-python-rolling/actions/workflows/build_wheels_linux.yml/badge.svg)](https://github.com/opencv/opencv-python-rolling/actions/workflows/build_wheels_linux.yml)
+[![(Mac OS Build status)](https://github.com/opencv/opencv-python-rolling/actions/workflows/build_wheels_macos.yml/badge.svg)](https://github.com/opencv/opencv-python-rolling/actions/workflows/build_wheels_macos.yml)
 
 The aim of this repository is to provide means to package each new [OpenCV release](https://github.com/opencv/opencv/releases) for the most used Python versions and platforms.
 
@@ -130,11 +130,11 @@ See the next section for more info about manual builds outside the CI environmen
 
 If some dependency is not enabled in the pre-built wheels, you can also run the build locally to create a custom wheel.
 
-1. Clone this repository: `git clone --recursive https://github.com/opencv/opencv-python.git`
-2. ``cd opencv-python``
+1. Clone this repository: `git clone --recursive https://github.com/opencv/opencv-python-rolling.git`
+2. ``cd opencv-python-rolling``
     - you can use `git` to checkout some other version of OpenCV in the `opencv` and `opencv_contrib` submodules if needed
 3. Add custom Cmake flags if needed, for example: `export CMAKE_ARGS="-DSOME_FLAG=ON -DSOME_OTHER_FLAG=OFF"` (in Windows you need to set environment variables differently depending on Command Line or PowerShell)
-4. Select the package flavor which you wish to build with `ENABLE_CONTRIB` and `ENABLE_HEADLESS`: i.e. `export ENABLE_CONTRIB=1` if you wish to build `opencv-contrib-python`
+4. Select the package flavor which you wish to build with `ENABLE_CONTRIB` and `ENABLE_HEADLESS`: i.e. `export ENABLE_CONTRIB=1` if you wish to build `opencv-contrib-python-rolling`
 5. Run ``pip wheel . --verbose``. NOTE: make sure you have the latest ``pip`` version, the ``pip wheel`` command replaces the old ``python setup.py bdist_wheel`` command which does not support ``pyproject.toml``.
     - this might take anything from 5 minutes to over 2 hours depending on your hardware
 6. You'll have the wheel file in the `dist` folder and you can do with that whatever you wish
@@ -143,7 +143,7 @@ If some dependency is not enabled in the pre-built wheels, you can also run the 
 
 #### Manual debug builds
 
-In order to build `opencv-python` in an unoptimized debug build, you need to side-step the normal process a bit.
+In order to build `opencv-python-rolling` in an unoptimized debug build, you need to side-step the normal process a bit.
 
 1. Install the packages `scikit-build` and `numpy` via pip.
 2. Run the command `python setup.py bdist_wheel --build-type=Debug`.
@@ -165,8 +165,8 @@ Since OpenCV version 4.3.0, also source distributions are provided in PyPI. This
 
 You can also force ``pip`` to build the wheels from the source distribution. Some examples:
 
-- ``pip install --no-binary opencv-python opencv-python``
-- ``pip install --no-binary :all: opencv-python``
+- ``pip install --no-binary opencv-python-rolling opencv-python-rolling``
+- ``pip install --no-binary :all: opencv-python-rolling``
 
 If you need contrib modules or headless version, just change the package name (step 4 in the previous section is not needed). However, any additional CMake flags can be provided via environment variables as described in step 3 of the manual build section. If none are provided, OpenCV's CMake scripts will attempt to find and enable any suitable dependencies. Headless distributions have hard coded CMake flags which disable all possible GUI dependencies.
 
@@ -174,17 +174,17 @@ On slow systems such as Raspberry Pi the full build may take several hours. On a
 
 ### Licensing
 
-Opencv-python package (scripts in this repository) is available under MIT license.
+OpenCV Python package (scripts in this repository) is available under MIT license.
 
-OpenCV itself is available under [Apache 2](https://github.com/opencv/opencv/blob/master/LICENSE) license.
+OpenCV itself is available under [Apache 2](https://github.com/opencv/opencv/blob/4.x/LICENSE) license.
 
-Third party package licenses are at [LICENSE-3RD-PARTY.txt](https://github.com/opencv/opencv-python/blob/master/LICENSE-3RD-PARTY.txt).
+Third party package licenses are at [LICENSE-3RD-PARTY.txt](https://github.com/opencv/opencv-python-rolling/blob/4.x/LICENSE-3RD-PARTY.txt).
 
 All wheels ship with [FFmpeg](http://ffmpeg.org) licensed under the [LGPLv2.1](http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html).
 
 Non-headless Linux wheels ship with [Qt 5](http://doc.qt.io/qt-5/lgpl.html) licensed under the [LGPLv3](http://www.gnu.org/licenses/lgpl-3.0.html).
 
-The packages include also other binaries. Full list of licenses can be found from [LICENSE-3RD-PARTY.txt](https://github.com/opencv/opencv-python/blob/master/LICENSE-3RD-PARTY.txt).
+The packages include also other binaries. Full list of licenses can be found from [LICENSE-3RD-PARTY.txt](https://github.com/opencv/opencv-python-rolling/blob/4.x/LICENSE-3RD-PARTY.txt).
 
 ### Versioning
 
@@ -192,15 +192,15 @@ The packages include also other binaries. Full list of licenses can be found fro
 
 ### Releases
 
-A release is made and uploaded to PyPI when a new tag is pushed to master branch. These tags differentiate packages (this repo might have modifications but OpenCV version stays same) and should be incremented sequentially. In practice, release version numbers look like this:
+A release is made and uploaded to PyPI when a new tag is pushed to 4.x branch. These tags differentiate packages (this repo might have modifications but OpenCV version stays same) and should be incremented sequentially. In practice, release version numbers look like this:
 
 ``cv_major.cv_minor.cv_revision.package_revision`` e.g. ``3.1.0.0``
 
-The master branch follows OpenCV master branch releases. 3.4 branch follows OpenCV 3.4 bugfix releases.
+The 4.x branch follows OpenCV 4.x branch releases. 3.4 branch follows OpenCV 3.4 bugfix releases.
 
 ### Development builds
 
-Every commit to the master branch of this repo will be built. Possible build artifacts use local version identifiers:
+Every commit to the 4.x branch of this repo will be built. Possible build artifacts use local version identifiers:
 
 ``cv_major.cv_minor.cv_revision+git_hash_of_this_repo`` e.g. ``3.1.0+14a8d39``
 
@@ -210,7 +210,7 @@ These artifacts can't be and will not be uploaded to PyPI.
 
 Linux wheels are built using [manylinux2014](https://github.com/pypa/manylinux). These wheels should work out of the box for most of the distros (which use GNU C standard library) out there since they are built against an old version of glibc.
 
-The default ``manylinux2014`` images have been extended with some OpenCV dependencies. See [Docker folder](https://github.com/skvark/opencv-python/tree/master/docker) for more info.
+The default ``manylinux2014`` images have been extended with some OpenCV dependencies. See [Docker folder](https://github.com/opencv/opencv-python-rolling/tree/4.x/docker) for more info.
 
 ### Supported Python versions
 

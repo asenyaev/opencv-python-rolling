@@ -62,16 +62,16 @@ def main():
     # https://stackoverflow.com/questions/1405913/python-32bit-or-64bit-mode
     is64 = sys.maxsize > 2 ** 32
 
-    package_name = "opencv-python"
+    package_name = "opencv-python-rolling"
 
     if build_contrib and not build_headless:
-        package_name = "opencv-contrib-python"
+        package_name = "opencv-contrib-python-rolling"
 
     if build_contrib and build_headless:
-        package_name = "opencv-contrib-python-headless"
+        package_name = "opencv-contrib-python-headless-rolling"
 
     if build_headless and not build_contrib:
-        package_name = "opencv-python-headless"
+        package_name = "opencv-python-headless-rolling"
 
     long_description = io.open("README.md", encoding="utf-8").read()
 
@@ -245,14 +245,14 @@ def main():
     skbuild.setup(
         name=package_name,
         version=package_version,
-        url="https://github.com/skvark/opencv-python",
+        url="https://github.com/opencv/opencv-python-rolling",
         license="MIT",
         description="Wrapper package for OpenCV python bindings.",
         long_description=long_description,
         long_description_content_type="text/markdown",
         packages=packages,
         package_data=package_data,
-        maintainer="Olli-Pekka Heinisuo",
+        maintainer="OpenCV Team",
         ext_modules=EmptyListWithLength(),
         install_requires=install_requires,
         python_requires=">=3.6",
